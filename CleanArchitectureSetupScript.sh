@@ -84,6 +84,20 @@ echo -e "	public $NAME"Entity"()\n	{\n	}\n}" >> $NAME"Entity.cs"
 
 cd ../..
 
+#-------------------------------------
+#         Sets up Domain.Test         |
+#-------------------------------------
+
+# Creates xunit test project
+
+dotnet new xunit -n $NAME.Domain.Test
+
+cd $NAME.Domain.Test
+mkdir $NAME"EntityTest"
+
+dotnet add $NAME.Domain.Test.csproj reference "../$NAME.Domain/$NAME.Domain.csproj"
+
+cd ..
 
 #-------------------------------------
 #      Sets up Application layer      |
@@ -181,7 +195,7 @@ if [[ "$SQLMCP" = y && "$SQLINDIVIDUAL" = y ]]; then
 
 
 	# Creates and sets up individual SqlMigrations project
-	 
+ 
 	dotnet new classlib -n $NAME.SqlMigrations
 
 	cd $NAME.SqlMigrations
