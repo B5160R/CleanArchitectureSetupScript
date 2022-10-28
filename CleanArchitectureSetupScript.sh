@@ -1,11 +1,11 @@
 #! /bin/bash
 
-#**************************************
-# Clean Architecture Template Script  *
-#		                     		  *
-# Author: Mike Frederiksen            *
-#                                     *
-#**************************************
+#*****************************************************************
+# Clean Architecture Template Script                             *
+#		                                    		 *
+# Author: Mike Frederiksen                                       *
+# Github: https://github.com/B5160R/CleanArchitectureSetupScript *                                   *
+#*****************************************************************
 
 #-------------------------------------
 #         User Input Settings         |
