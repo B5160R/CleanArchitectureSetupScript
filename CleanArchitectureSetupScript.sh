@@ -1,11 +1,11 @@
 #! /bin/bash
 
-#*****************************************************************
-# Clean Architecture Template Setup Script                       *
-#		                                    		 *
-# Author: Mike Frederiksen                                       *
-# Github: https://github.com/B5160R/CleanArchitectureSetupScript *
-#*****************************************************************
+#**************************************
+# Clean Architecture Template Script  *
+#		                      *
+# Author: Mike Frederiksen            *
+#                                     *
+#**************************************
 
 #-------------------------------------
 #         User Input Settings         |
@@ -41,8 +41,6 @@ else
 fi
 
 if [ "$SQLCONNECT" = y ]; then
-	echo "Set path to exisiting SqlMigration project:"
-	read SQLMIGRATIONPATH
 	echo "Set path from current location to existing SqlContext project:"
 	read SQLCONTEXT
 	echo "Set full name of SqlContext project (fx SqlContext.csproj):"
@@ -249,7 +247,8 @@ elif [[ "$SQLMCP" = y && "$SQLINDIVIDUAL" = n ]]; then
 # Connects to existing SqlMigration, SqlContext projects and database 
 elif [[ "$SQLMCP" = n && "$SQLCONNECT" = y ]]; then
 
-	cd SQLCONTEXT
+	cd ../..
+	cd $SQLCONTEXT
 
 	dotnet add $SQLCONTEXTNAME reference "../$DIR/$NAME/$NAME.Domain/$NAME.Domain.csproj"
 
